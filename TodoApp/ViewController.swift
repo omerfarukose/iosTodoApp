@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     // table view for tasks
     @IBOutlet var tableView: UITableView!
-    
+        
     // task list
     var tasks = [String]()
 
@@ -27,6 +27,8 @@ class ViewController: UIViewController {
             UserDefaults().set(true, forKey: "setup")
             UserDefaults().set(0, forKey: "count")
         }
+        
+        updateTasks()
     }
     
     
@@ -35,9 +37,32 @@ class ViewController: UIViewController {
         
         vc.title = "New Task"
         
+        vc.update = {
+            DispatchQueue.main.async {
+                self.updateTasks()
+            }
+        }
+        
         navigationController?.pushViewController(vc, animated: true)
     }
-
+    
+    
+    func updateTasks() {
+        
+        tasks.removeAll()
+        
+        guard let count = UserDefaults().value(forKey: "count") as? Int else {
+            return
+        }
+                
+        for x in 0..<count {
+            if let task = UserDefaults().value(forKey: "task_\(x+1)") as? String {
+                tasks.append(task)
+            }
+        }
+        
+        tableView.reloadData()
+    }
 
 }
 

@@ -10,7 +10,10 @@ import UIKit
 class EntryViewController: UIViewController {
     
     @IBOutlet var todoField: UITextField!
+    
+    var update: (() -> Void)?
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         todoField.delegate = self
@@ -35,9 +38,12 @@ class EntryViewController: UIViewController {
                 
         UserDefaults().set(text, forKey: "task_\(count)")
         
+        update?()
+        
+        navigationController?.popViewController(animated: true )
+        
     }
     
-
 }
 
 
