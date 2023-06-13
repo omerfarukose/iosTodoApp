@@ -17,6 +17,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func didAddTapped() {
+        let vc = storyboard?.instantiateViewController(identifier: "entry") as! EntryViewController
+        
+        vc.title = "New Task"
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
 
 }

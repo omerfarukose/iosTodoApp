@@ -40,7 +40,13 @@
                             <constraint firstItem="0Ra-Re-HIH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rcS-Eg-HJH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZaT-8c-9K9"/>
+                    <navigationItem key="navigationItem" id="ZaT-8c-9K9">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="a3m-La-Ugv">
+                            <connections>
+                                <action selector="didAddTapped" destination="BYZ-38-t0r" id="0xp-PG-Sk1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="0Ra-Re-HIH" id="xSr-2h-fJC"/>
                     </connections>
@@ -49,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="1063.3587786259541" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Task Detail View Controller-->
         <scene sceneID="EQe-D4-mCp">
             <objects>
-                <viewController id="zcc-ak-OWG" sceneMemberID="viewController">
+                <viewController id="zcc-ak-OWG" customClass="TaskDetailViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hdr-oI-g0W">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBN-Xr-mGR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1930.534351145038" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1923" y="505"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WIz-Ia-Lmk">
@@ -82,10 +88,46 @@
             </objects>
             <point key="canvasLocation" x="136.64122137404578" y="3.5211267605633805"/>
         </scene>
+        <!--Entry View Controller-->
+        <scene sceneID="rHp-Fz-7QO">
+            <objects>
+                <viewController storyboardIdentifier="entry" id="tev-7n-GT4" customClass="EntryViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iD2-AG-36r">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xk1-au-4Pk">
+                                <rect key="frame" x="20" y="79" width="353" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="is3-qt-CBM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="P3q-nW-5MH"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="xk1-au-4Pk" firstAttribute="top" secondItem="P3q-nW-5MH" secondAttribute="top" constant="20" id="Opj-K0-HdO"/>
+                            <constraint firstItem="P3q-nW-5MH" firstAttribute="trailing" secondItem="xk1-au-4Pk" secondAttribute="trailing" constant="20" id="tk4-Jb-P5Y"/>
+                            <constraint firstItem="xk1-au-4Pk" firstAttribute="leading" secondItem="P3q-nW-5MH" secondAttribute="leading" constant="20" id="tnA-JX-Mzx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="todoField" destination="xk1-au-4Pk" id="fk0-zc-JJt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WYx-SM-DdE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="-271"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
