@@ -58,13 +58,30 @@
         <!--Task Detail View Controller-->
         <scene sceneID="EQe-D4-mCp">
             <objects>
-                <viewController id="zcc-ak-OWG" customClass="TaskDetailViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="taskDetail" id="zcc-ak-OWG" customClass="TaskDetailViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hdr-oI-g0W">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bH8-PB-I9m">
+                                <rect key="frame" x="12" y="71" width="369" height="735"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Nof-so-Agq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bH8-PB-I9m" firstAttribute="top" secondItem="Nof-so-Agq" secondAttribute="top" constant="12" id="5x0-Dr-Elw"/>
+                            <constraint firstItem="Nof-so-Agq" firstAttribute="trailing" secondItem="bH8-PB-I9m" secondAttribute="trailing" constant="12" id="K8e-jy-iiy"/>
+                            <constraint firstItem="bH8-PB-I9m" firstAttribute="leading" secondItem="Nof-so-Agq" secondAttribute="leading" constant="12" id="Qdg-OI-kM0"/>
+                            <constraint firstItem="Nof-so-Agq" firstAttribute="bottom" secondItem="bH8-PB-I9m" secondAttribute="bottom" constant="12" id="jae-Y0-q11"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="bH8-PB-I9m" id="ad5-0D-bd2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBN-Xr-mGR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

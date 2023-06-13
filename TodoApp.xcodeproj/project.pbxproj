@@ -105,13 +105,11 @@
 			children = (
 				2284802E2A38CE450007F166 /* AppDelegate.swift */,
 				228480302A38CE450007F166 /* SceneDelegate.swift */,
-				228480322A38CE450007F166 /* ViewController.swift */,
 				228480342A38CE450007F166 /* Main.storyboard */,
 				228480372A38CE450007F166 /* Assets.xcassets */,
 				228480392A38CE450007F166 /* LaunchScreen.storyboard */,
 				2284803C2A38CE450007F166 /* Info.plist */,
-				2284805E2A38D30A0007F166 /* EntryViewController.swift */,
-				228480602A38D31D0007F166 /* TaskDetailViewController.swift */,
+				228480622A38E1E80007F166 /* Controllers */,
 			);
 			path = TodoApp;
 			sourceTree = "<group>";
@@ -131,6 +129,16 @@
 				228480512A38CE450007F166 /* TodoAppUITestsLaunchTests.swift */,
 			);
 			path = TodoAppUITests;
+			sourceTree = "<group>";
+		};
+		228480622A38E1E80007F166 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				228480322A38CE450007F166 /* ViewController.swift */,
+				2284805E2A38D30A0007F166 /* EntryViewController.swift */,
+				228480602A38D31D0007F166 /* TaskDetailViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

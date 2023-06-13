@@ -12,7 +12,6 @@ class EntryViewController: UIViewController {
     @IBOutlet var todoField: UITextField!
     
     var update: (() -> Void)?
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +32,9 @@ class EntryViewController: UIViewController {
         }
         
         let newCount = count + 1
+        
+        print("saveTask count : ", count)
+        print("saveTask text : ", text)
                 
         UserDefaults().set(newCount, forKey: "count")
                 
@@ -50,6 +52,10 @@ class EntryViewController: UIViewController {
 extension EntryViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == todoField {
+            saveTask()
+        }
         
         return true
     }
