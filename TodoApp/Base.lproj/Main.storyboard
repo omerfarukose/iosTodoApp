@@ -64,15 +64,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-YE-EjB">
-                                <rect key="frame" x="165" y="278" width="61" height="35"/>
+                                <rect key="frame" x="166" y="451" width="61" height="35"/>
                                 <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Save">
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uZt-N3-gbJ">
-                                <rect key="frame" x="20" y="79" width="357" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uZt-N3-gbJ">
+                                <rect key="frame" x="20" y="268" width="357" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -82,9 +82,9 @@
                         <constraints>
                             <constraint firstItem="uZt-N3-gbJ" firstAttribute="leading" secondItem="Nof-so-Agq" secondAttribute="leading" constant="20" id="5Nr-xD-jDC"/>
                             <constraint firstItem="uZt-N3-gbJ" firstAttribute="trailing" secondItem="hdr-oI-g0W" secondAttribute="trailingMargin" id="HOt-qc-tcv"/>
-                            <constraint firstItem="uZt-N3-gbJ" firstAttribute="top" secondItem="Nof-so-Agq" secondAttribute="top" constant="20" id="SXZ-qp-OJk"/>
-                            <constraint firstItem="BGv-YE-EjB" firstAttribute="leading" secondItem="Nof-so-Agq" secondAttribute="leading" constant="165" id="g3I-YU-ceY"/>
-                            <constraint firstItem="Nof-so-Agq" firstAttribute="bottom" secondItem="BGv-YE-EjB" secondAttribute="bottom" constant="505" id="w3j-5a-g5G"/>
+                            <constraint firstItem="uZt-N3-gbJ" firstAttribute="top" secondItem="Nof-so-Agq" secondAttribute="top" constant="209" id="SXZ-qp-OJk"/>
+                            <constraint firstItem="BGv-YE-EjB" firstAttribute="leading" secondItem="Nof-so-Agq" secondAttribute="leading" constant="166" id="g3I-YU-ceY"/>
+                            <constraint firstItem="Nof-so-Agq" firstAttribute="bottom" secondItem="BGv-YE-EjB" secondAttribute="bottom" constant="332" id="w3j-5a-g5G"/>
                         </constraints>
                     </view>
                     <connections>
