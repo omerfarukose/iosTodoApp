@@ -34,13 +34,15 @@ class ViewController: UIViewController {
     
     func setup(){
         UserDefaults().set(true, forKey: "setup")
-        UserDefaults().set(0, forKey: "count")
+        UserDefaults().set([], forKey: "taskList")
     }
     
     @IBAction func didAddTapped() {
         let vc = storyboard?.instantiateViewController(identifier: "entry") as! EntryViewController
 
         vc.title = "New Task"
+        
+        print("task list : ", tasks)
 
         vc.update = {
             DispatchQueue.main.async {
@@ -52,45 +54,24 @@ class ViewController: UIViewController {
     }
     
     @objc func deleteAllTasks() {
-        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-        UserDefaults.standard.synchronize()
-                
-        setup()
         
-        if let defaultsDictionary = UserDefaults.standard.dictionaryRepresentation() as? [String: Any] {
-            for (key, value) in defaultsDictionary {
-                print("Key: \(key), Value: \(value)")
-            }
-        }
+        UserDefaults().set([], forKey: "taskList")
         
-        tableView.reloadData()
+        updateTasks()
     }
     
     func updateTasks() {
         
-        tasks.removeAll()
-        
-        guard let count = UserDefaults().value(forKey: "count") as? Int else {
+        guard let taskList = UserDefaults().value(forKey: "taskList") as? Array<String> else {
             return
         }
-        
-        print("-----------------")
-        print("updateTasks count : ", count)
                 
-        for x in 0..<count {
-            print("-----------------")
-            print("updateTasks x : ", x)
-            if let task = UserDefaults().value(forKey: "task_\(x)") as? String {
-                print("task for append list : ", task)
-                tasks.append(task)
-            }
-        }
+        tasks = taskList
         
         self.tableView.reloadData()
     }
 
 }
-
 
 extension ViewController: UITableViewDelegate {
     
@@ -98,20 +79,11 @@ extension ViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true )
         
         let vc = storyboard?.instantiateViewController(identifier: "taskDetail") as! TaskDetailViewController
-        
 
         vc.title = "Task"
-        vc.task = tasks[indexPath.row]
         vc.taskIndex = indexPath.row
         
         print("clicked task index: ", indexPath.row)
-        print("clicked task : ", tasks[indexPath.row])
-        
-        if let defaultsDictionary = UserDefaults.standard.dictionaryRepresentation() as? [String: Any] {
-            for (key, value) in defaultsDictionary {
-                print("Key: \(key), Value: \(value)")
-            }
-        }
         
         vc.update = {
             DispatchQueue.main.async {

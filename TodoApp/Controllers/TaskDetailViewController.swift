@@ -14,33 +14,31 @@ class TaskDetailViewController: UIViewController {
     var update: (() -> Void)?
     
     var task: String?
-    var taskIndex: Int?
+    var taskIndex: Int!
+    
+    var tasks = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard var taskList = UserDefaults().value(forKey: "taskList") as? Array<String> else {
+            print("task detail : can't get task list !")
+            return
+        }
+        
+        tasks = taskList
 
-        label.text = task
+        label.text = tasks[taskIndex]
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteTask))
     }
     
     
     @objc func deleteTask() {
-        guard let count = UserDefaults().value(forKey: "count") as? Int else {
-            return
-        }
-                
-        let newCount = count - 1
         
-        UserDefaults().set(newCount , forKey: "count")
+        tasks.remove(at: taskIndex)
         
-        guard let task = UserDefaults().value(forKey: "task_\(taskIndex!)") as? String else {
-            return
-        }
-        
-        print("delete task : ", task)
-        
-        UserDefaults().set(nil , forKey: "task_\(taskIndex!)")
+        UserDefaults().set(tasks, forKey: "taskList")
         
         update?()
         

@@ -24,21 +24,18 @@ class EntryViewController: UIViewController {
     @objc func saveTask() {
         
         guard let text = todoField.text, !text.isEmpty else {
+            print("saveTask : can't get text !")
             return
         }
         
-        guard let count = UserDefaults().value(forKey: "count") as? Int else {
+        guard var taskList = UserDefaults().value(forKey: "taskList") as? Array<String> else {
+            print("saveTask : can't get task list !")
             return
         }
-        
-        let newCount = count + 1
-        
-        print("saveTask count : ", count)
-        print("saveTask text : ", text)
                 
-        UserDefaults().set(newCount, forKey: "count")
-                
-        UserDefaults().set(text, forKey: "task_\(count)")
+        taskList.append(text)
+        
+        UserDefaults().set(taskList, forKey: "taskList")
         
         update?()
         
