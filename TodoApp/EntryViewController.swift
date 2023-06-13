@@ -33,6 +33,8 @@ class EntryViewController: UIViewController {
         
         UserDefaults().set(newCount, forKey: "count")
         
+        // test
+        
         UserDefaults().set(text, forKey: "task_\(count)")
         
     }
