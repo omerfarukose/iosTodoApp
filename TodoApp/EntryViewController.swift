@@ -32,9 +32,7 @@ class EntryViewController: UIViewController {
         let newCount = count + 1
         
         UserDefaults().set(newCount, forKey: "count")
-        
-        // test
-        
+                
         UserDefaults().set(text, forKey: "task_\(count)")
         
     }
